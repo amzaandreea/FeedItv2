@@ -1,0 +1,100 @@
+﻿@using Microsoft.AspNetCore.Components.Web
+@using FeedItv2.Models
+@using FeedItv2.Services
+@inject JsonFileAnimalService AnimalService
+
+<div class="card-columns">
+    @foreach (var animal in AnimalService.GetAnimals())
+    {
+    <div class="card" id="myActiveCard" @onclick="(x => SelectedAnimal(animal.id))">
+
+        @if (@animal.weight <= 15)
+        {
+            <div class="card-img" style="background-image: url('@animal.imageSmall');"></div>
+        }
+        else if (@animal.weight <= 30)
+        {
+            <div class="card-img" style="background-image: url('@animal.imageMedium');"></div>
+        }
+        else
+        {
+            <div class="card-img" style="background-image: url('@animal.imageLarge');"></div>
+        }
+        <div class="card-body">
+            <h5 class="card-title">
+                Hello! My name is @animal.name, I am @animal.age years and I weigh @animal.weight kg
+            </h5>
+        </div>
+        <div class="card-footer" >
+            <small class="text-muted">
+                <button @onclick="(x => SelectedAnimal(animal.id))"
+                        data-toggle="modal" data-target="#productModal" class="btn btn-primary">
+                    I want food!
+                </button>
+            </small>
+        </div>
+    </div>
+    }
+</div>
+
+@if (selectedAnimal != null)
+{
+    <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productTitle">@selectedAnimal.name</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="card">
+                        @if (selectedAnimal.weight <= 15)
+                        {
+                            <div class="card-img" style="background-image: url('@selectedAnimal.imageSmall');"></div>
+                        }
+                        else if (selectedAnimal.weight <= 30)
+                        {
+                            <div class="card-img" style="background-image: url('@selectedAnimal.imageMedium');"></div>
+                        }
+                        else
+                        {
+                            <div class="card-img" style="background-image: url('@selectedAnimal.imageLarge');"></div>
+                        }
+                    <div class="card-body">
+                        <p class="card-text">I am @selectedAnimal.weight kg</p>
+                        <p class="card-text">I am @selectedAnimal.age years old</p>
+                        <p class="card-text">I want food!! Will you give me food?</p>
+                        <p class="card-text">Careful! If you push the button I'll gain 5 kg!</p>
+                    </div>
+                        <small class="text-muted">
+                            <button @onclick="(x => AddsSomeWeight())"
+                                    data-toggle="modal" data-target="#productModal" class="btn btn-primary">
+                                Feed me!!!
+                            </button>
+                        </small>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    Animal selectedAnimal;
+    int selectedAnimalId;
+
+    void SelectedAnimal(int animalId)
+    {
+        selectedAnimalId = animalId;
+        selectedAnimal = AnimalService.GetAnimals().First(x => x.id == animalId);
+    }
+
+    void AddsSomeWeight()
+    {
+        AnimalService.AddWeight(selectedAnimal.id);
+    }
+}
