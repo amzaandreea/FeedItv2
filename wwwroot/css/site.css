@@ -42,7 +42,9 @@ for details on configuring this project to bundle and minify static web assets. 
     opacity: .8;
 
 }
-
+.text {
+    text-align: center;
+}
 .modal .card-img {
     height: 500px;
     vertical-align: bottom;
