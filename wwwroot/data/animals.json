@@ -3,81 +3,126 @@
     "id": 1,
     "name": "Pablo",
     "age": 3,
-    "weight": 70,
-    "imageSmall": "https://i.imgur.com/rALz9Gh.jpeg",
-    "imageMedium": "https://i.imgur.com/4wEIsyv.jpeg",
-    "imageLarge": "https://i.imgur.com/nMnDsAd.jpg"
+    "weight": [
+      3,
+      10,
+      24
+    ],
+    "imageSmall": "https://storageresourcesgia.blob.core.windows.net/asp-net-core-workshop-images/pablo-little.jpeg",
+    "imageMedium": "https://storageresourcesgia.blob.core.windows.net/asp-net-core-workshop-images/pablo-medium.jpeg",
+    "imageLarge": "https://storageresourcesgia.blob.core.windows.net/asp-net-core-workshop-images/pablo-large.jpg",
+    "fat": 2
   },
   {
     "id": 2,
     "name": "Juan",
     "age": 2,
-    "weight": 35,
-    "imageSmall": "https://i.imgur.com/hxSXvT2.jpg",
-    "imageMedium": "https://i.imgur.com/HxIosjZ.jpeg",
-    "imageLarge": "https://i.dailymail.co.uk/i/newpix/2018/03/09/01/4A05892300000578-5480259-image-m-3_1520557642328.jpg"
+    "weight": [
+      2,
+      6,
+      15
+    ],
+    "imageSmall": "https://storageresourcesgia.blob.core.windows.net/asp-net-core-workshop-images/juan-little.jpg",
+    "imageMedium": "https://storageresourcesgia.blob.core.windows.net/asp-net-core-workshop-images/juan-medium.jpeg",
+    "imageLarge": "https://storageresourcesgia.blob.core.windows.net/asp-net-core-workshop-images/juan-fat.jpg",
+    "fat": 2
   },
   {
     "id": 3,
     "name": "Chandler",
     "age": 22,
-    "weight": 35,
-    "imageSmall": "https://scontent-otp1-1.xx.fbcdn.net/v/t1.0-9/81073793_109610233883254_4363220670000136192_n.jpg?_nc_cat=110\u0026_nc_sid=09cbfe\u0026_nc_eui2=AeHIGgaUlNQlV-BHe7Y0ZuSTI2YZLgd7rk8jZhkuB3uuTxMy_3Q5PiYeiGzubMWnEYatWFEKQemLI8ehy5JFqgDo\u0026_nc_ohc=1jBnArjPehEAX8ExUM4\u0026_nc_oc=AQk0oYzScNIbHQ3PT__9WsPz-F7Mi8IKZBhEg9b7bYSri6GGlkoxruVJIT24r0hNfIQ\u0026_nc_ht=scontent-otp1-1.xx\u0026oh=06f1d5003837c0cde34e2aa974a0a5a5\u0026oe=5F42DE6D",
-    "imageMedium": "https://cdn.shopify.com/s/files/1/0037/0268/5745/articles/home-yourpets-hamster_1024x1024.jpg?v=1564696396",
-    "imageLarge": "https://external-preview.redd.it/e4RMgq9GwQFX4D1nrxllnV8D5QbDaeAmvjeyX0GbRIM.png?auto=webp\u0026s=db564dc69e585ac58455892b15684c5b7dd05dc6"
+    "weight": [
+      0.2,
+      0.5,
+      1.2
+    ],
+    "imageSmall": "https://storageresourcesgia.blob.core.windows.net/asp-net-core-workshop-images/chandler-little.jpg",
+    "imageMedium": "https://storageresourcesgia.blob.core.windows.net/asp-net-core-workshop-images/chandler-medium.jpg",
+    "imageLarge": "https://storageresourcesgia.blob.core.windows.net/asp-net-core-workshop-images/chandler-large.png",
+    "fat": 2
   },
   {
     "id": 4,
     "name": "Rimba",
     "age": 4,
-    "weight": 40,
-    "imageSmall": "https://image.winudf.com/v2/image/Y29tLkNoaWVmV2FsbHBhcGVycy5MaTA5X3NjcmVlbnNob3RzXzNfZmRjNGJkYg/screen-3.jpg?fakeurl=1\u0026type=.jpg",
-    "imageMedium": "https://lh3.googleusercontent.com/proxy/HK9VNJGeR-6LAozDbPtx7kDF47C9u6wFpajl7Dt7cNirY_0J1u38VH1a9WrVso-S9ZFa-7FRJgrRUZQQd_cpuwq8MMU7CQzINm_ZWJTmzT8glLT1Gna0tj8qX88lrj4s",
-    "imageLarge": "https://i.insider.com/588b2e78dd08954e4e8b4b91?width=1100\u0026format=jpeg\u0026auto=webp"
+    "weight": [
+      30,
+      78,
+      164
+    ],
+    "imageSmall": "https://storageresourcesgia.blob.core.windows.net/asp-net-core-workshop-images/rimba-little.jpg",
+    "imageMedium": "https://storageresourcesgia.blob.core.windows.net/asp-net-core-workshop-images/rimba-medium.jpg",
+    "imageLarge": "https://storageresourcesgia.blob.core.windows.net/asp-net-core-workshop-images/rimba-large.png",
+    "fat": 1
   },
   {
     "id": 5,
     "name": "Micha",
     "age": 11,
-    "weight": 20,
-    "imageSmall": "https://i.kym-cdn.com/entries/icons/facebook/000/017/076/Cat_theme_1.jpg",
-    "imageMedium": "https://i.imgur.com/4zipp9r.jpg",
-    "imageLarge": "https://i.imgur.com/Nb8jryc.png"
+    "weight": [
+      1,
+      4,
+      9
+    ],
+    "imageSmall": "https://storageresourcesgia.blob.core.windows.net/asp-net-core-workshop-images/micha-little.jpg",
+    "imageMedium": "https://storageresourcesgia.blob.core.windows.net/asp-net-core-workshop-images/micha-medium.jpg",
+    "imageLarge": "https://storageresourcesgia.blob.core.windows.net/asp-net-core-workshop-images/micha-large.png",
+    "fat": 2
   },
   {
     "id": 6,
     "name": "Ken",
     "age": 14,
-    "weight": 30,
-    "imageSmall": "https://media1.fdncms.com/clevescene/imager/u/original/30651191/unnamed_1_.jpg",
-    "imageMedium": "https://assets.nrdc.org/sites/default/files/styles/full_content--retina/public/media-uploads/4156898465_25c1473163_o_0.jpg?itok=bySSKukk",
-    "imageLarge": "https://img-9gag-fun.9cache.com/photo/awQZGwy_460s.jpg"
+    "weight": [
+      56,
+      130,
+      504
+    ],
+    "imageSmall": "https://storageresourcesgia.blob.core.windows.net/asp-net-core-workshop-images/ken-little.jpg",
+    "imageMedium": "https://storageresourcesgia.blob.core.windows.net/asp-net-core-workshop-images/ken-medium.jpg",
+    "imageLarge": "https://storageresourcesgia.blob.core.windows.net/asp-net-core-workshop-images/ken-large.jpg",
+    "fat": 2
   },
   {
     "id": 7,
     "name": "Fifian",
     "age": 6,
-    "weight": 40,
-    "imageSmall": "https://live.staticflickr.com/5228/5661961729_c78cb74e95_b.jpg",
-    "imageMedium": "https://i.pinimg.com/originals/59/a6/84/59a68487fa4287a9fe31610f852e6f3f.jpg",
-    "imageLarge": "https://media.wired.com/photos/5c6750d23e8add2cdb91724f/125:94/w_2393,h_1800,c_limit/shark-551025353.jpg"
+    "weight": [
+      0.1,
+      0.4,
+      405
+    ],
+    "imageSmall": "https://storageresourcesgia.blob.core.windows.net/asp-net-core-workshop-images/fifian-small.jpg",
+    "imageMedium": "https://storageresourcesgia.blob.core.windows.net/asp-net-core-workshop-images/fifian-medium.jpg",
+    "imageLarge": "https://storageresourcesgia.blob.core.windows.net/asp-net-core-workshop-images/fifian-large.jpg",
+    "fat": 2
   },
   {
     "id": 8,
     "name": "Pancake",
     "age": 41,
-    "weight": 40,
-    "imageSmall": "https://images-cdn.9gag.com/photo/aN0KVzr_700b.jpg",
-    "imageMedium": "https://scontent-otp1-1.xx.fbcdn.net/v/t1.0-0/p180x540/42500847_544820622596089_5945140954288619520_o.jpg?_nc_cat=105\u0026_nc_sid=730e14\u0026_nc_eui2=AeGevc3OwMsPjJfYBcuLHNtNRyRujG2DNVNHJG6MbYM1U-kkH93g-B19v6EjTxPaNRP-gIob0mdgAQNoVRUUQ9QW\u0026_nc_ohc=-UkUlB9xV-oAX95kcLi\u0026_nc_ht=scontent-otp1-1.xx\u0026_nc_tp=6\u0026oh=f0f908e5e317e33a0f6932dc29b19cd0\u0026oe=5F43B051",
-    "imageLarge": "https://i.pinimg.com/originals/aa/59/10/aa5910dccd49db8253ae211fa7ec1827.jpg"
+    "weight": [
+      34,
+      102,
+      343
+    ],
+    "imageSmall": "https://storageresourcesgia.blob.core.windows.net/asp-net-core-workshop-images/pancake-little.jpg",
+    "imageMedium": "https://storageresourcesgia.blob.core.windows.net/asp-net-core-workshop-images/pancake-medium.jpg",
+    "imageLarge": "https://storageresourcesgia.blob.core.windows.net/asp-net-core-workshop-images/pancake-large.jpg",
+    "fat": 2
   },
   {
     "id": 9,
     "name": "Chimi",
     "age": 3,
-    "weight": 45,
-    "imageSmall": "https://i.pinimg.com/originals/47/28/52/47285259218a4829732720549de1aff8.jpg",
-    "imageMedium": "https://c402277.ssl.cf1.rackcdn.com/photos/18134/images/priority_species/Medium_WW226365.jpg?1574452099,",
-    "imageLarge": "https://scontent-otp1-1.xx.fbcdn.net/v/t1.0-9/1236243_10151659681381840_2126957318_n.jpg?_nc_cat=110\u0026_nc_sid=9267fe\u0026_nc_eui2=AeE-1CsMDWYbuGDb6_jg-PDA-cvzxwAeYTT5y_PHAB5hNNP4xMH5cevm5ODb3l2rl0LijT_1fq0BGuFhdgMWK3Wj\u0026_nc_ohc=2PiSLfuQqRgAX-Y9Ojw\u0026_nc_ht=scontent-otp1-1.xx\u0026oh=43f2f938ebbcfc1c77f6ff4dca13f624\u0026oe=5F43B0B7"
+    "weight": [
+      12,
+      103,
+      265
+    ],
+    "imageSmall": "https://storageresourcesgia.blob.core.windows.net/asp-net-core-workshop-images/chimi-little.jpg",
+    "imageMedium": "https://storageresourcesgia.blob.core.windows.net/asp-net-core-workshop-images/chimi-medium.jpg",
+    "imageLarge": "https://storageresourcesgia.blob.core.windows.net/asp-net-core-workshop-images/chimi-fat.jpg",
+    "fat": 2
   }
 ]

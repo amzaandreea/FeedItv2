@@ -32,11 +32,12 @@ namespace FeedItv2.Services
         {
             var animals = GetAnimals();
 
-            var query = animals.First(x => x.id == animalId);
+            var query = animals.First(x => x.Id == animalId);
 
-            query.weight += 5;
+            if(query.Fat <= 1)
+            query.Fat += 1;
 
-            using (var outputStream = File.OpenWrite(JsonFileName))
+            using (FileStream outputStream = File.OpenWrite(JsonFileName))
             {
                 JsonSerializer.Serialize<IEnumerable<Animal>>(
                     new Utf8JsonWriter(outputStream, new JsonWriterOptions

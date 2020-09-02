@@ -6,34 +6,34 @@
 <div class="card-columns">
     @foreach (var animal in AnimalService.GetAnimals())
     {
-    <div class="card" id="myActiveCard" @onclick="(x => SelectedAnimal(animal.id))">
+        <div class="card" id="myActiveCard" @onclick="(x => SelectedAnimal(animal.Id))">
 
-        @if (@animal.weight <= 15)
-        {
-            <div class="card-img" style="background-image: url('@animal.imageSmall');"></div>
-        }
-        else if (@animal.weight <= 30)
-        {
-            <div class="card-img" style="background-image: url('@animal.imageMedium');"></div>
-        }
-        else
-        {
-            <div class="card-img" style="background-image: url('@animal.imageLarge');"></div>
-        }
-        <div class="card-body">
-            <h5 class="card-title">
-                Hello! My name is @animal.name, I am @animal.age years and I weigh @animal.weight kg
-            </h5>
+            @if (@animal.Fat == 0)
+            {
+                <div class="card-img" style="background-image: url('@animal.ImageSmall');"></div>
+            }
+            else if (@animal.Fat == 1)
+            {
+                <div class="card-img" style="background-image: url('@animal.ImageMedium');"></div>
+            }
+            else
+            {
+                <div class="card-img" style="background-image: url('@animal.ImageLarge');"></div>
+            }
+            <div class="card-body">
+                <h5 class="card-title">
+                    Hello! My name is @animal.Name, I am @animal.Age years and I weigh @animal.Weight[animal.Fat] kg
+                </h5>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">
+                    <button @onclick="(x => SelectedAnimal(animal.Id))"
+                            data-toggle="modal" data-target="#productModal" class="btn btn-primary">
+                        I want food!
+                    </button>
+                </small>
+            </div>
         </div>
-        <div class="card-footer" >
-            <small class="text-muted">
-                <button @onclick="(x => SelectedAnimal(animal.id))"
-                        data-toggle="modal" data-target="#productModal" class="btn btn-primary">
-                    I want food!
-                </button>
-            </small>
-        </div>
-    </div>
     }
 </div>
 
@@ -43,37 +43,45 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="productTitle">@selectedAnimal.name</h5>
+                    <h5 class="modal-title" id="productTitle">@selectedAnimal.Name</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <div class="card">
-                        @if (selectedAnimal.weight <= 15)
+                        @if (selectedAnimal.Fat == 0)
                         {
-                            <div class="card-img" style="background-image: url('@selectedAnimal.imageSmall');"></div>
+                            <div class="card-img" style="background-image: url('@selectedAnimal.ImageSmall');"></div>
                         }
-                        else if (selectedAnimal.weight <= 30)
+                        else if (selectedAnimal.Fat == 1)
                         {
-                            <div class="card-img" style="background-image: url('@selectedAnimal.imageMedium');"></div>
+                            <div class="card-img" style="background-image: url('@selectedAnimal.ImageMedium');"></div>
                         }
                         else
                         {
-                            <div class="card-img" style="background-image: url('@selectedAnimal.imageLarge');"></div>
+                            <div class="card-img" style="background-image: url('@selectedAnimal.ImageLarge');"></div>
                         }
-                    <div class="card-body">
-                        <p class="card-text">I am @selectedAnimal.weight kg</p>
-                        <p class="card-text">I am @selectedAnimal.age years old</p>
-                        <p class="card-text">I want food!! Will you give me food?</p>
-                        <p class="card-text">Careful! If you push the button I'll gain 5 kg!</p>
-                    </div>
-                        <small class="text-muted">
-                            <button @onclick="(x => AddsSomeWeight())"
-                                    data-toggle="modal" data-target="#productModal" class="btn btn-primary">
-                                Feed me!!!
-                            </button>
-                        </small>
+                        <div class="card-body">
+                            <p class="card-text">I am @selectedAnimal.Weight[selectedAnimal.Fat] kg</p>
+                            <p class="card-text">I am @selectedAnimal.Age years old</p>
+                            <p class="card-text">I want food!! Will you give me food?</p>
+                            <p class="card-text">Careful! If you push the button I'll gain a lot of weight!</p>
+                        </div>
+
+                        @if (selectedAnimal.Fat < 2)
+                        {
+                            <small class="text-muted">
+                                <button @onclick="(x => AddsSomeWeight())"
+                                        data-toggle="modal" data-target="#productModal" class="btn btn-primary">
+                                    Feed me!!!
+                                </button>
+                            </small>
+                        }
+                        else
+                        {
+                            <h4 class="text">I reached my maximum weight!</h4>
+                        }
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -90,11 +98,11 @@
     void SelectedAnimal(int animalId)
     {
         selectedAnimalId = animalId;
-        selectedAnimal = AnimalService.GetAnimals().First(x => x.id == animalId);
+        selectedAnimal = AnimalService.GetAnimals().First(x => x.Id == animalId);
     }
 
     void AddsSomeWeight()
     {
-        AnimalService.AddWeight(selectedAnimal.id);
+        AnimalService.AddWeight(selectedAnimal.Id);
     }
 }
